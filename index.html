@@ -758,7 +758,7 @@
       <div class="contact-info">
         <div class="c-item">
           <div class="c-icon">✉️</div>
-          <div><div class="c-label">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection#6a1f1810030b180b02070b042a0d070b030644090507"><span class="__cf_email__" data-cfemail="ff8a8d85969e8d9e97929e91bf98929e9693d19c9092">[email&#160;protected]</span></a></div></div>
+          <div><div class="c-label">Email</div><div class="c-val"><a href="mailto:urziarahman@gmail.com" style="color:#e8c96b;text-decoration:none;font-weight:500;">urziarahman@gmail.com</a></div></div>
         </div>
         <div class="c-item">
           <div class="c-icon">📞</div>
@@ -785,7 +785,9 @@
         <span class="avail-badge active">✅ Contract / Consulting</span>
       </div>
     </div>
-    <form class="contact-form reveal" action="https://formspree.io/f/mwvnrwol" method="POST" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal" action="https://formspree.io/f/mwvnrwol" method="POST">
+      <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
+      <input type="text" name="_gotcha" style="display:none" />
       <div class="form-row">
         <div class="form-group"><label for="fname">First Name</label><input id="fname" type="text" placeholder="Jane" required/></div>
         <div class="form-group"><label for="lname">Last Name</label><input id="lname" type="text" placeholder="Smith" required/></div>
@@ -814,48 +816,56 @@
   }, { threshold: 0.07 });
   reveals.forEach(el => observer.observe(el));
 
-  async function handleSubmit(e) {
+  document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
-    const form = e.target;
-    btn.textContent = 'Sending...';
-    btn.style.opacity = '0.75';
-    btn.disabled = true;
+    const form = this;
+    const data = new FormData(form);
 
-    try {
-      const response = await fetch('https://formspree.io/f/mwvnrwol', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        btn.textContent = 'Message Sent!';
-        btn.style.background = '#2ecc71';
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    fetch('https://formspree.io/f/mwvnrwol', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        btn.textContent = 'Sent! I will be in touch.';
+        btn.style.background = '#22c55e';
         btn.style.color = '#fff';
         btn.style.opacity = '1';
+        btn.style.padding = '0.95rem 1.5rem';
         form.reset();
-        setTimeout(() => {
-          btn.textContent = 'Send Message';
-          btn.style.background = '';
-          btn.style.color = '';
-          btn.disabled = false;
-        }, 4000);
       } else {
-        throw new Error('Server error');
+        btn.textContent = 'Error. Email me directly.';
+        btn.style.background = '#ef4444';
+        btn.style.color = '#fff';
+        btn.style.opacity = '1';
       }
-    } catch (err) {
-      btn.textContent = 'Failed - Try Again';
-      btn.style.background = '#e74c3c';
-      btn.style.color = '#fff';
-      btn.style.opacity = '1';
       btn.disabled = false;
-      setTimeout(() => {
+      setTimeout(function() {
         btn.textContent = 'Send Message';
         btn.style.background = '';
         btn.style.color = '';
-      }, 4000);
-    }
-  }
+        btn.style.padding = '';
+      }, 5000);
+    })
+    .catch(function() {
+      btn.textContent = 'Error. Email me directly.';
+      btn.style.background = '#ef4444';
+      btn.style.color = '#fff';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      setTimeout(function() {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 5000);
+    });
+  });
 </script>
 </body>
 </html>
