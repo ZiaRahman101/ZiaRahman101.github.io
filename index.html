@@ -3,187 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zia Rahman — Business & Financial Analyst</title>
+  <title>Zia Rahman — Business Analyst, BI Consultant & Financial Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy: #0b1f3a; --gold: #c9a84c; --gold-light: #e8c96b;
+      --teal: #0e7490; --teal-light: #e0f2f8;
       --cream: #f7f4ef; --white: #ffffff; --text: #1a2b3c;
       --muted: #6b7f91; --border: #e2ddd5;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5%; background: rgba(247,244,239,0.93);
+      padding: 1.1rem 5%; background: rgba(247,244,239,0.94);
       backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: box-shadow .3s;
     }
     nav.scrolled { box-shadow: 0 2px 24px rgba(11,31,58,.08); }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); }
     .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-links a { text-decoration: none; font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: .8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
     .nav-links a:hover { color: var(--navy); }
-    .nav-cta { background: var(--navy); color: #fff; border: none; padding: .55rem 1.4rem; border-radius: 3px; font-size: .83rem; font-weight: 500; letter-spacing: .04em; cursor: pointer; text-decoration: none; transition: background .2s; }
+    .nav-cta { background: var(--navy); color: #fff; border: none; padding: .5rem 1.3rem; border-radius: 3px; font-size: .82rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: background .2s; }
     .nav-cta:hover { background: var(--gold); }
 
+    /* HERO */
     #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 5% 5rem; position: relative; overflow: hidden; }
-    #hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 55vw; height: 55vw; border-radius: 50%; background: radial-gradient(circle at 60% 40%, rgba(201,168,76,.11), transparent 70%); pointer-events: none; }
+    #hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 55vw; height: 55vw; border-radius: 50%; background: radial-gradient(circle at 60% 40%, rgba(201,168,76,.1), transparent 70%); pointer-events: none; }
     .hero-text { animation: fadeUp .8s ease both; }
     .hero-tag { display: inline-block; font-size: .78rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: .3rem .8rem; border-radius: 2px; margin-bottom: 1.5rem; }
-    .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4.5vw, 3.8rem); font-weight: 700; color: var(--navy); line-height: 1.12; margin-bottom: 1.2rem; }
+    .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.2vw, 3.7rem); font-weight: 700; color: var(--navy); line-height: 1.12; margin-bottom: 1.2rem; }
     .hero-text h1 em { color: var(--gold); font-style: normal; }
-    .hero-text p { font-size: 1rem; color: var(--muted); max-width: 480px; margin-bottom: 2.2rem; font-weight: 300; }
+    .hero-text p { font-size: 1rem; color: var(--muted); max-width: 490px; margin-bottom: 2rem; font-weight: 300; line-height: 1.7; }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { background: var(--navy); color: #fff; padding: .85rem 2rem; border-radius: 3px; text-decoration: none; font-weight: 500; font-size: .92rem; transition: background .2s, transform .15s; }
+    .btn-primary { background: var(--navy); color: #fff; padding: .82rem 1.9rem; border-radius: 3px; text-decoration: none; font-weight: 500; font-size: .9rem; transition: background .2s, transform .15s; }
     .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
-    .btn-outline { border: 1.5px solid var(--navy); color: var(--navy); padding: .85rem 2rem; border-radius: 3px; text-decoration: none; font-weight: 500; font-size: .92rem; transition: all .2s; }
+    .btn-outline { border: 1.5px solid var(--navy); color: var(--navy); padding: .82rem 1.9rem; border-radius: 3px; text-decoration: none; font-weight: 500; font-size: .9rem; transition: all .2s; }
     .btn-outline:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
-    .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--navy); }
+
+    /* role pills */
+    .role-pills { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.8rem; }
+    .pill { font-size: .75rem; font-weight: 500; padding: .3rem .85rem; border-radius: 20px; letter-spacing: .04em; }
+    .pill-blue { background: #dbeafe; color: #1e40af; }
+    .pill-teal { background: var(--teal-light); color: var(--teal); }
+    .pill-gold { background: rgba(201,168,76,.15); color: #92700f; }
+    .pill-green { background: #dcfce7; color: #166534; }
+    .pill-purple { background: #ede9fe; color: #6d28d9; }
+    .pill-rose { background: #ffe4e6; color: #9f1239; }
+    .pill-slate { background: #e2e8f0; color: #334155; }
+
+    .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.8rem; padding-top: 2.2rem; border-top: 1px solid var(--border); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--navy); }
     .stat-num span { color: var(--gold); }
-    .stat-label { font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .stat-label { font-size: .74rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 
     .hero-visual { display: flex; justify-content: center; align-items: center; animation: fadeIn 1s ease .3s both; }
-    .hero-card { background: var(--navy); border-radius: 14px; padding: 2.5rem; width: 360px; box-shadow: 0 32px 80px rgba(11,31,58,.2); position: relative; }
-    .hero-card::after { content: ''; position: absolute; inset: -2px; border-radius: 16px; background: linear-gradient(135deg, rgba(201,168,76,.35), transparent 60%); z-index: -1; }
-    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; }
-    .avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #e8c96b); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); }
-    .card-name { color: #fff; font-weight: 500; font-size: .95rem; }
-    .card-role { color: rgba(255,255,255,.5); font-size: .78rem; }
-    .mini-chart { margin-bottom: 1.5rem; }
-    .chart-label { color: rgba(255,255,255,.4); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: .6rem; }
-    .bars { display: flex; align-items: flex-end; gap: 6px; height: 70px; }
-    .bar { flex: 1; border-radius: 3px 3px 0 0; background: rgba(201,168,76,.2); animation: grow .9s ease both; }
+    .hero-card { background: var(--navy); border-radius: 14px; padding: 2.3rem; width: 355px; box-shadow: 0 32px 80px rgba(11,31,58,.2); position: relative; }
+    .hero-card::after { content: ''; position: absolute; inset: -2px; border-radius: 16px; background: linear-gradient(135deg, rgba(201,168,76,.32), transparent 60%); z-index: -1; }
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem; }
+    .avatar { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #e8c96b); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+    .card-name { color: #fff; font-weight: 500; font-size: .93rem; }
+    .card-role { color: rgba(255,255,255,.5); font-size: .76rem; }
+    .mini-chart { margin-bottom: 1.4rem; }
+    .chart-label { color: rgba(255,255,255,.4); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: .6rem; }
+    .bars { display: flex; align-items: flex-end; gap: 5px; height: 65px; }
+    .bar { flex: 1; border-radius: 3px 3px 0 0; background: rgba(201,168,76,.18); animation: grow .9s ease both; }
     .bar.active { background: var(--gold); }
-    .bar:nth-child(1){height:40%;animation-delay:.1s}.bar:nth-child(2){height:58%;animation-delay:.15s}.bar:nth-child(3){height:35%;animation-delay:.2s}.bar:nth-child(4){height:75%;animation-delay:.25s}.bar:nth-child(5){height:52%;animation-delay:.3s}.bar:nth-child(6){height:84%;animation-delay:.35s}.bar:nth-child(7){height:68%;animation-delay:.4s}.bar:nth-child(8){height:92%;animation-delay:.45s}
-    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .metric { background: rgba(255,255,255,.07); border-radius: 8px; padding: 1rem; }
-    .metric-val { color: var(--gold); font-family:'Playfair Display',serif; font-size: 1.1rem; font-weight: 700; }
-    .metric-key { color: rgba(255,255,255,.45); font-size: .72rem; margin-top: .2rem; }
+    .bar:nth-child(1){height:38%;animation-delay:.1s}.bar:nth-child(2){height:55%;animation-delay:.15s}.bar:nth-child(3){height:32%;animation-delay:.2s}.bar:nth-child(4){height:72%;animation-delay:.25s}.bar:nth-child(5){height:50%;animation-delay:.3s}.bar:nth-child(6){height:82%;animation-delay:.35s}.bar:nth-child(7){height:65%;animation-delay:.4s}.bar:nth-child(8){height:94%;animation-delay:.45s}
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .metric { background: rgba(255,255,255,.07); border-radius: 8px; padding: .9rem; }
+    .metric-val { color: var(--gold); font-family:'Playfair Display',serif; font-size: 1.05rem; font-weight: 700; }
+    .metric-key { color: rgba(255,255,255,.45); font-size: .7rem; margin-top: .15rem; }
 
-    section { padding: 6rem 5%; }
-    .section-tag { font-size: .75rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: .7rem; display: block; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3vw, 2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
-    .section-sub { color: var(--muted); font-size: 1rem; max-width: 520px; font-weight: 300; margin-bottom: 3.5rem; }
+    /* SHARED */
+    section { padding: 5.5rem 5%; }
+    .section-tag { font-size: .74rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; display: block; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 700; color: var(--navy); margin-bottom: .9rem; }
+    .section-sub { color: var(--muted); font-size: .97rem; max-width: 520px; font-weight: 300; margin-bottom: 3rem; }
 
-    #about { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+    /* ABOUT */
+    #about { background: var(--white); border-top: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 5rem; align-items: center; }
     .about-img-wrap { position: relative; }
-    .about-img-box { background: var(--navy); border-radius: 12px; height: 440px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .about-img-box::before { content: 'ZR'; font-family: 'Playfair Display', serif; font-size: 9rem; font-weight: 700; color: rgba(201,168,76,.13); position: absolute; }
-    .about-badge { position: absolute; bottom: -1rem; right: -1rem; background: var(--gold); color: var(--navy); border-radius: 8px; padding: 1rem 1.3rem; font-weight: 700; font-size: .82rem; line-height: 1.4; box-shadow: 0 8px 24px rgba(201,168,76,.35); text-align: center; }
-    .about-content p { color: var(--muted); font-size: .97rem; margin-bottom: 1.2rem; font-weight: 300; }
-    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
-    .highlight { display: flex; align-items: flex-start; gap: .8rem; padding: 1rem; border: 1px solid var(--border); border-radius: 6px; }
+    .about-img-box { background: var(--navy); border-radius: 12px; height: 430px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .about-img-box::before { content: 'ZR'; font-family: 'Playfair Display', serif; font-size: 9rem; font-weight: 700; color: rgba(201,168,76,.12); position: absolute; }
+    .about-badge { position: absolute; bottom: -1rem; right: -1rem; background: var(--gold); color: var(--navy); border-radius: 8px; padding: .9rem 1.2rem; font-weight: 700; font-size: .8rem; line-height: 1.4; box-shadow: 0 8px 24px rgba(201,168,76,.35); text-align: center; }
+    .about-content p { color: var(--muted); font-size: .96rem; margin-bottom: 1.1rem; font-weight: 300; line-height: 1.75; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 1.8rem; }
+    .highlight { display: flex; align-items: flex-start; gap: .8rem; padding: .95rem; border: 1px solid var(--border); border-radius: 6px; transition: box-shadow .2s; }
+    .highlight:hover { box-shadow: 0 4px 16px rgba(11,31,58,.07); }
     .h-icon { font-size: 1.2rem; }
     .h-label { font-size: .82rem; font-weight: 500; color: var(--navy); }
-    .h-sub { font-size: .74rem; color: var(--muted); }
+    .h-sub { font-size: .73rem; color: var(--muted); }
 
+    /* WHAT I DO - new section */
+    #whatido { background: var(--navy); }
+    #whatido .section-tag { color: var(--gold-light); }
+    #whatido .section-title { color: #fff; }
+    #whatido .section-sub { color: rgba(255,255,255,.5); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.3rem; }
+    .service-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 1.8rem 1.5rem; transition: background .25s, transform .25s; }
+    .service-card:hover { background: rgba(201,168,76,.1); border-color: rgba(201,168,76,.3); transform: translateY(-3px); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-title { font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .service-desc { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.65; }
+
+    /* EDUCATION */
     #education { background: var(--cream); }
-    .edu-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .edu-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem 2rem; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 1.5rem; transition: box-shadow .25s, transform .25s; }
+    .edu-list { display: flex; flex-direction: column; gap: 1.3rem; }
+    .edu-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.7rem 2rem; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 1.4rem; transition: box-shadow .25s, transform .25s; }
     .edu-card:hover { box-shadow: 0 10px 36px rgba(11,31,58,.08); transform: translateY(-2px); }
-    .edu-icon { font-size: 1.8rem; padding-top: .1rem; }
-    .edu-school { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
-    .edu-degree { font-size: .9rem; color: var(--muted); margin-bottom: .5rem; }
-    .edu-courses { font-size: .78rem; color: var(--muted); font-style: italic; line-height: 1.6; }
-    .edu-badge { font-size: .75rem; color: var(--gold); font-weight: 500; margin-top: .4rem; }
+    .edu-icon { font-size: 1.7rem; padding-top: .1rem; }
+    .edu-school { font-family: 'Playfair Display', serif; font-size: 1.02rem; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
+    .edu-degree { font-size: .88rem; color: var(--muted); margin-bottom: .45rem; }
+    .edu-courses { font-size: .77rem; color: var(--muted); font-style: italic; line-height: 1.6; }
+    .edu-badge { font-size: .74rem; color: var(--gold); font-weight: 500; margin-top: .35rem; }
     .edu-right { text-align: right; white-space: nowrap; }
-    .edu-gpa { display: inline-block; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.35); color: #8a6f2e; font-size: .78rem; font-weight: 600; padding: .25rem .7rem; border-radius: 3px; margin-bottom: .4rem; }
-    .edu-dates { font-size: .76rem; color: var(--muted); }
+    .edu-gpa { display: inline-block; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.35); color: #8a6f2e; font-size: .76rem; font-weight: 600; padding: .22rem .65rem; border-radius: 3px; margin-bottom: .4rem; }
+    .edu-dates { font-size: .74rem; color: var(--muted); }
 
+    /* SKILLS */
     #skills { background: var(--white); border-top: 1px solid var(--border); }
-    .skills-layout { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-    .skill-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; transition: box-shadow .25s, transform .25s; }
+    .skills-layout { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+    .skill-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.7rem; transition: box-shadow .25s, transform .25s; }
     .skill-card:hover { box-shadow: 0 12px 40px rgba(11,31,58,.09); transform: translateY(-3px); }
-    .skill-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-    .skill-cat { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
-    .skill-desc { font-size: .82rem; color: var(--muted); margin-bottom: 1.2rem; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .tag { font-size: .72rem; font-weight: 500; background: var(--white); color: var(--navy); border: 1px solid var(--border); padding: .25rem .65rem; border-radius: 3px; }
+    .skill-icon { font-size: 1.7rem; margin-bottom: .9rem; }
+    .skill-cat { font-family: 'Playfair Display', serif; font-size: .97rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+    .skill-desc { font-size: .8rem; color: var(--muted); margin-bottom: 1.1rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .38rem; }
+    .tag { font-size: .7rem; font-weight: 500; background: var(--white); color: var(--navy); border: 1px solid var(--border); padding: .22rem .6rem; border-radius: 3px; }
     .tag.gold { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.35); color: #8a6f2e; }
+    .tag.teal { background: var(--teal-light); border-color: #a5d8e8; color: var(--teal); }
 
+    /* EXPERIENCE */
     #experience { background: var(--cream); }
     .exp-list { display: flex; flex-direction: column; gap: 2rem; }
     .exp-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 2rem 2.2rem; transition: box-shadow .25s; }
     .exp-card:hover { box-shadow: 0 10px 36px rgba(11,31,58,.08); }
     .exp-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.2rem; gap: 1rem; }
-    .exp-company { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
-    .exp-title { font-size: .88rem; color: var(--gold); font-weight: 500; margin-top: .2rem; }
-    .exp-dates { font-size: .78rem; color: var(--muted); white-space: nowrap; text-align: right; }
-    .exp-location { font-size: .76rem; color: var(--muted); }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
-    .exp-bullets li { font-size: .87rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.65; }
-    .exp-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: .75rem; top: .05rem; }
+    .exp-company { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700; color: var(--navy); }
+    .exp-title { font-size: .87rem; color: var(--gold); font-weight: 500; margin-top: .2rem; }
+    .exp-dates { font-size: .76rem; color: var(--muted); white-space: nowrap; text-align: right; }
+    .exp-location { font-size: .74rem; color: var(--muted); }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    .exp-bullets li { font-size: .86rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.65; }
+    .exp-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: .74rem; top: .06rem; }
     .exp-bullets strong { color: var(--text); font-weight: 500; }
 
+    /* PROJECTS */
     #projects { background: var(--white); border-top: 1px solid var(--border); }
-    .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.8rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.7rem; }
     .project-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--white); transition: box-shadow .25s, transform .25s; }
     .project-card:hover { box-shadow: 0 16px 48px rgba(11,31,58,.1); transform: translateY(-4px); }
-    .proj-top { background: var(--navy); padding: 1.8rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-    .proj-icon { font-size: 2rem; }
-    .proj-year { font-size: .75rem; color: rgba(255,255,255,.35); letter-spacing: .08em; }
-    .proj-body { padding: 1.8rem 2rem; }
-    .proj-type { font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
-    .proj-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .7rem; }
-    .proj-desc { font-size: .85rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.65; }
-    .proj-stack { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .proj-top { padding: 1.6rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .proj-top.navy { background: var(--navy); }
+    .proj-top.teal { background: #0e4f6b; }
+    .proj-top.dark { background: #1a3a2a; }
+    .proj-top.slate { background: #1e2d45; }
+    .proj-icon { font-size: 1.9rem; }
+    .proj-badges { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; }
+    .proj-year { font-size: .72rem; color: rgba(255,255,255,.35); letter-spacing: .08em; }
+    .proj-source { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 3px; }
+    .proj-source.academic { background: rgba(201,168,76,.2); color: var(--gold-light); }
+    .proj-source.personal { background: rgba(134,239,172,.2); color: #86efac; }
+    .proj-body { padding: 1.7rem 2rem; }
+    .proj-type { font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .45rem; }
+    .proj-title { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700; color: var(--navy); margin-bottom: .65rem; }
+    .proj-desc { font-size: .84rem; color: var(--muted); margin-bottom: 1.1rem; line-height: 1.65; }
+    .proj-stack { display: flex; gap: .38rem; flex-wrap: wrap; }
+    .proj-impact { display: inline-flex; align-items: center; gap: .4rem; margin-bottom: .9rem; font-size: .78rem; font-weight: 500; color: var(--teal); background: var(--teal-light); padding: .3rem .75rem; border-radius: 20px; }
 
+    /* COMPETITIONS */
     #competitions { background: var(--cream); }
-    .comp-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
-    .comp-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; display: flex; gap: 1.2rem; transition: box-shadow .25s, transform .25s; }
+    .comp-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.4rem; }
+    .comp-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.7rem; display: flex; gap: 1.2rem; transition: box-shadow .25s, transform .25s; }
     .comp-card:hover { box-shadow: 0 10px 32px rgba(11,31,58,.08); transform: translateY(-2px); }
-    .comp-icon { font-size: 2.2rem; flex-shrink: 0; }
-    .comp-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
-    .comp-date { font-size: .74rem; color: var(--muted); margin-bottom: .6rem; }
-    .comp-result { display: inline-block; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.35); color: #8a6f2e; font-size: .75rem; font-weight: 600; padding: .2rem .7rem; border-radius: 3px; margin-bottom: .6rem; }
-    .comp-desc { font-size: .84rem; color: var(--muted); line-height: 1.6; }
+    .comp-icon { font-size: 2rem; flex-shrink: 0; }
+    .comp-title { font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+    .comp-date { font-size: .72rem; color: var(--muted); margin-bottom: .55rem; }
+    .comp-result { display: inline-block; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.35); color: #8a6f2e; font-size: .73rem; font-weight: 600; padding: .18rem .65rem; border-radius: 3px; margin-bottom: .55rem; }
+    .comp-desc { font-size: .83rem; color: var(--muted); line-height: 1.6; }
 
+    /* CERTIFICATIONS */
     #certifications { background: var(--white); border-top: 1px solid var(--border); }
-    .cert-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
-    .cert-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; transition: box-shadow .2s; }
+    .cert-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.1rem; }
+    .cert-card { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; display: flex; align-items: center; gap: 1rem; transition: box-shadow .2s; }
     .cert-card:hover { box-shadow: 0 8px 28px rgba(11,31,58,.08); }
-    .cert-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .cert-name { font-size: .88rem; font-weight: 500; color: var(--navy); }
-    .cert-issuer { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+    .cert-icon { font-size: 1.55rem; flex-shrink: 0; }
+    .cert-name { font-size: .86rem; font-weight: 500; color: var(--navy); }
+    .cert-issuer { font-size: .73rem; color: var(--muted); margin-top: .12rem; }
 
+    /* BLOG */
     #blog { background: var(--cream); }
-    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-    .blog-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; transition: box-shadow .25s, transform .25s; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+    .blog-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.7rem; transition: box-shadow .25s, transform .25s; }
     .blog-card:hover { box-shadow: 0 12px 40px rgba(11,31,58,.09); transform: translateY(-3px); }
-    .blog-date { font-size: .72rem; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .8rem; }
-    .blog-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .7rem; line-height: 1.4; }
-    .blog-excerpt { font-size: .83rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
-    .blog-read { font-size: .78rem; font-weight: 500; color: var(--gold); text-decoration: none; letter-spacing: .04em; }
+    .blog-cat { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .5rem; }
+    .blog-cat.bi { color: var(--teal); }
+    .blog-cat.data { color: #7c3aed; }
+    .blog-cat.finance { color: #c2410c; }
+    .blog-cat.consulting { color: #166534; }
+    .blog-date { font-size: .7rem; color: var(--muted); margin-bottom: .7rem; }
+    .blog-title { font-family: 'Playfair Display', serif; font-size: .97rem; font-weight: 700; color: var(--navy); margin-bottom: .65rem; line-height: 1.4; }
+    .blog-excerpt { font-size: .81rem; color: var(--muted); line-height: 1.62; margin-bottom: 1.1rem; }
+    .blog-read { font-size: .76rem; font-weight: 500; color: var(--gold); letter-spacing: .04em; }
 
-    #contact { background: var(--navy); color: #fff; border-top: 1px solid rgba(255,255,255,.07); }
+    /* CONTACT */
+    #contact { background: var(--navy); color: #fff; }
     #contact .section-title { color: #fff; }
     #contact .section-sub { color: rgba(255,255,255,.5); }
     #contact .section-tag { color: var(--gold-light); }
     .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
-    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 1rem; }
     .c-item { display: flex; align-items: center; gap: 1rem; }
-    .c-icon { width: 42px; height: 42px; border-radius: 8px; background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-    .c-label { font-size: .72rem; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .1em; }
-    .c-val { font-size: .9rem; color: rgba(255,255,255,.85); }
+    .c-icon { width: 42px; height: 42px; border-radius: 8px; background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .c-label { font-size: .7rem; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .1em; }
+    .c-val { font-size: .88rem; color: rgba(255,255,255,.85); }
     .c-val a { color: var(--gold-light); text-decoration: none; }
+    .avail-badges { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .avail-badge { font-size: .74rem; font-weight: 500; padding: .3rem .8rem; border-radius: 20px; border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.7); }
+    .avail-badge.active { background: rgba(201,168,76,.2); border-color: rgba(201,168,76,.4); color: var(--gold-light); }
     .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: .4rem; }
-    label { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); }
-    input, textarea { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 6px; padding: .85rem 1rem; color: #fff; font-family: 'DM Sans', sans-serif; font-size: .9rem; transition: border-color .2s; width: 100%; }
+    .form-group { display: flex; flex-direction: column; gap: .38rem; }
+    label { font-size: .73rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+    input, textarea { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 6px; padding: .82rem 1rem; color: #fff; font-family: 'DM Sans', sans-serif; font-size: .88rem; transition: border-color .2s; width: 100%; }
     input::placeholder, textarea::placeholder { color: rgba(255,255,255,.25); }
     input:focus, textarea:focus { outline: none; border-color: var(--gold); }
-    textarea { resize: vertical; min-height: 110px; }
-    .submit-btn { background: var(--gold); color: var(--navy); border: none; padding: 1rem 2.5rem; border-radius: 6px; font-weight: 600; font-size: .9rem; cursor: pointer; letter-spacing: .04em; align-self: flex-start; transition: background .2s, transform .15s; }
+    textarea { resize: vertical; min-height: 108px; }
+    .submit-btn { background: var(--gold); color: var(--navy); border: none; padding: .95rem 2.4rem; border-radius: 6px; font-weight: 600; font-size: .88rem; cursor: pointer; letter-spacing: .04em; align-self: flex-start; transition: background .2s, transform .15s; }
     .submit-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-    footer { background: #060f1c; color: rgba(255,255,255,.3); padding: 2rem 5%; text-align: center; font-size: .8rem; letter-spacing: .04em; }
+    footer { background: #060f1c; color: rgba(255,255,255,.3); padding: 2rem 5%; text-align: center; font-size: .78rem; letter-spacing: .04em; }
     footer span { color: var(--gold); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
@@ -192,16 +248,16 @@
     .reveal { opacity:0; transform:translateY(22px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    @media(max-width:900px) {
+    @media(max-width:1100px) { .services-grid { grid-template-columns: repeat(2,1fr); } }    @media(max-width:900px) {
       #hero{grid-template-columns:1fr;padding-top:7rem}
       .hero-visual{margin-top:3rem}
       .hero-card{width:100%;max-width:400px}
       .about-grid,.contact-layout{grid-template-columns:1fr}
       .skills-layout,.cert-grid{grid-template-columns:repeat(2,1fr)}
-      .projects-grid,.comp-grid{grid-template-columns:1fr}
+      .projects-grid,.comp-grid,.services-grid{grid-template-columns:1fr}
       .blog-grid{grid-template-columns:repeat(2,1fr)}
       .edu-card{grid-template-columns:auto 1fr}
-      .edu-right{grid-column:2;text-align:left}
+      .edu-right{grid-column:2;text-align:left;margin-top:.4rem}
       .form-row{grid-template-columns:1fr}
       .nav-links{display:none}
     }
@@ -218,39 +274,39 @@
   <div class="nav-logo">Zia<span>.</span>Rahman</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
+    <li><a href="#whatido">Services</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="Zia_Rahman_BA_Final.pdf" class="nav-cta" download>Download CV</a>
+  <a href="Zia Rahman BA Final.pdf" class="nav-cta" download>Download CV</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-text">
     <span class="hero-tag">Open to Opportunities · Chicago, IL</span>
-    <h1>Business &amp; Data <em>Analyst</em> — Turning Numbers into Strategy</h1>
-    <p>Dual master's degree candidate specializing in SQL, Python, Power BI, financial modeling, and BI transformation across banking and enterprise environments.</p>
+    <h1>Business Analyst, <em>BI Consultant</em> &amp; Financial Strategist</h1>
+    <p>I turn complex data into clear decisions — across banking, enterprise consulting, and BI environments. Dual master's degree holder with a track record in reporting automation, financial modeling, customer analytics, and stakeholder-facing strategy delivery.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects →</a>
-      <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="#contact" class="btn-outline">Let's Work Together</a>
+    </div>
+    <div class="role-pills">
+      <span class="pill pill-blue">Business Analyst</span>
+      <span class="pill pill-teal">BI Developer</span>
+      <span class="pill pill-gold">Data Consultant</span>
+      <span class="pill pill-green">Reporting Strategist</span>
+      <span class="pill pill-purple">Financial Analyst</span>
+      <span class="pill pill-rose">Banking & Finance</span>
+      <span class="pill pill-slate">Strategy Consultant</span>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="stat-num">4.0<span>/4.0</span></div>
-        <div class="stat-label">MS GPA</div>
-      </div>
-      <div>
-        <div class="stat-num">50<span>K+</span></div>
-        <div class="stat-label">Records Analyzed</div>
-      </div>
-      <div>
-        <div class="stat-num">7<span>hrs</span></div>
-        <div class="stat-label">Saved Per Week</div>
-      </div>
+      <div><div class="stat-num">4.0<span>/4.0</span></div><div class="stat-label">MS GPA</div></div>
+      <div><div class="stat-num">50<span>K+</span></div><div class="stat-label">Records Analyzed</div></div>
+      <div><div class="stat-num">7<span>hrs</span></div><div class="stat-label">Saved Per Week</div></div>
     </div>
   </div>
   <div class="hero-visual">
@@ -259,11 +315,11 @@
         <div class="avatar">ZR</div>
         <div>
           <div class="card-name">Zia Rahman</div>
-          <div class="card-role">Business &amp; Data Analyst · Chicago</div>
+          <div class="card-role">BA · BI · Financial Analyst · Chicago</div>
         </div>
       </div>
       <div class="mini-chart">
-        <div class="chart-label">Reporting Efficiency Gains</div>
+        <div class="chart-label">Dashboard Adoption & Efficiency Gains</div>
         <div class="bars">
           <div class="bar"></div><div class="bar"></div><div class="bar"></div>
           <div class="bar"></div><div class="bar"></div><div class="bar active"></div>
@@ -289,28 +345,55 @@
     </div>
     <div class="about-content reveal">
       <span class="section-tag">About Me</span>
-      <h2 class="section-title">Analytical Thinker. Strategic Communicator. Data-Driven Consultant.</h2>
-      <p>I'm Zia Rahman — a business and data analyst based in Chicago with dual master's degrees in Business Analytics (IIT Stuart, Honors Graduate) and Data Analytics (Indiana Wesleyan, 4.0 GPA). My academic foundation is backed by real-world impact: automating reporting pipelines, building financial models, and delivering BI dashboards that leadership teams depend on daily.</p>
-      <p>I bridge the gap between raw data and executive decision-making — whether that's segmenting 50,000+ customers with RFM analysis, building scenario-based budget models, or designing KPI dashboards that eliminate hours of manual effort every week.</p>
-      <p>I'm passionate about applying data science and financial analytics to banking, capital markets, and enterprise consulting environments where insight drives real outcomes.</p>
+      <h2 class="section-title">I Help Organizations Make Better Decisions with Their Data.</h2>
+      <p>I'm Zia Rahman — a Business Analyst and BI Consultant based in Chicago with dual master's degrees in Business Analytics (IIT Stuart, Honors Graduate) and Data Analytics (Indiana Wesleyan, 4.0 GPA). My background spans data engineering, business intelligence, financial modeling, and strategic consulting — with a strong interest in banking, capital markets, and enterprise finance environments.</p>
+      <p>I've built reporting pipelines that save hours every week, customer segmentation models that directly improved retention, predictive tools that help leadership prioritize with confidence, and financial models that support real budget decisions. I'm equally comfortable in a room with a CFO, deep in SQL optimizing a pipeline, or structuring a consulting deliverable from a blank page.</p>
+      <p>Whether it's an investment bank, a management consultancy, or a data-driven enterprise — I bring analytical rigor, financial literacy, and clear communication to every engagement.</p>
       <div class="about-highlights">
-        <div class="highlight">
-          <div class="h-icon">📊</div>
-          <div><div class="h-label">Business Intelligence</div><div class="h-sub">Power BI · Tableau · SQL Dashboards</div></div>
-        </div>
-        <div class="highlight">
-          <div class="h-icon">💹</div>
-          <div><div class="h-label">Financial Modeling</div><div class="h-sub">DCF · 3-Statement · Scenario Analysis</div></div>
-        </div>
-        <div class="highlight">
-          <div class="h-icon">🐍</div>
-          <div><div class="h-label">Python & Machine Learning</div><div class="h-sub">pandas · scikit-learn · Predictive Models</div></div>
-        </div>
-        <div class="highlight">
-          <div class="h-icon">🗄️</div>
-          <div><div class="h-label">Data Engineering</div><div class="h-sub">ETL Pipelines · Snowflake · PostgreSQL</div></div>
-        </div>
+        <div class="highlight"><div class="h-icon">📊</div><div><div class="h-label">BI & Dashboard Development</div><div class="h-sub">Power BI · Tableau · Executive Reporting</div></div></div>
+        <div class="highlight"><div class="h-icon">🏦</div><div><div class="h-label">Banking & Financial Analysis</div><div class="h-sub">DCF · 3-Statement · Risk & Scenario Modeling</div></div></div>
+        <div class="highlight"><div class="h-icon">🔍</div><div><div class="h-label">Business Consulting</div><div class="h-sub">Requirements · Process Mapping · Strategy</div></div></div>
+        <div class="highlight"><div class="h-icon">🐍</div><div><div class="h-label">Python & Machine Learning</div><div class="h-sub">pandas · scikit-learn · Predictive Models</div></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="whatido">
+  <span class="section-tag">What I Do</span>
+  <h2 class="section-title">Services &amp; Specializations</h2>
+  <p class="section-sub">From data strategy to hands-on implementation — I help teams go from spreadsheet chaos to confident, data-driven decisions.</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">📊</div>
+      <div class="service-title">BI & Dashboard Development</div>
+      <div class="service-desc">End-to-end Power BI and Tableau development — from data modeling and DAX to executive dashboards used in C-suite reviews. I turn raw data into visual stories that drive weekly decisions.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔍</div>
+      <div class="service-title">Business Analysis & Consulting</div>
+      <div class="service-desc">Requirements gathering, stakeholder interviews, process mapping, and gap analysis. I bridge the gap between what the business needs and what the data can deliver.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🤖</div>
+      <div class="service-title">Data Science & Predictive Analytics</div>
+      <div class="service-desc">Building ML models (classification, regression, clustering) that go beyond description to prediction — churn risk, operational bottlenecks, demand forecasting, and more.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔄</div>
+      <div class="service-title">Reporting Automation & Data Engineering</div>
+      <div class="service-desc">Designing SQL-based ETL pipelines, data validation frameworks, and automated reporting workflows that eliminate manual effort and improve data reliability across the organization.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏦</div>
+      <div class="service-title">Financial Analysis & Banking Analytics</div>
+      <div class="service-desc">Financial modeling (DCF, 3-statement), scenario and sensitivity analysis, credit and risk analytics, and capital markets reporting — built for banking, investment, and corporate finance environments.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🎯</div>
+      <div class="service-title">Strategy & Management Consulting</div>
+      <div class="service-desc">Market entry analysis, competitive benchmarking, KPI framework design, and board-ready presentations. I bring structured problem-solving and hypothesis-driven thinking to every engagement.</div>
     </div>
   </div>
 </section>
@@ -319,7 +402,7 @@
 <section id="education">
   <span class="section-tag">Academic Background</span>
   <h2 class="section-title">Education</h2>
-  <p class="section-sub">Triple-degree holder across business analytics and data analytics with consistent academic honors at every level.</p>
+  <p class="section-sub">Triple-degree holder in business analytics and data analytics — with consistent academic honors at every level.</p>
   <div class="edu-list">
     <div class="edu-card reveal">
       <div class="edu-icon">🎓</div>
@@ -366,64 +449,43 @@
 <section id="skills">
   <span class="section-tag">Technical Toolkit</span>
   <h2 class="section-title">Skills &amp; Competencies</h2>
-  <p class="section-sub">A cross-functional skill set spanning data engineering, financial analytics, BI development, machine learning, and cloud platforms.</p>
+  <p class="section-sub">A cross-functional skill set spanning BI development, data engineering, analytics, machine learning, consulting, and cloud platforms.</p>
   <div class="skills-layout">
+    <div class="skill-card reveal">
+      <div class="skill-icon">📊</div>
+      <div class="skill-cat">BI & Data Visualization</div>
+      <div class="skill-desc">Building executive-grade dashboards and self-service reporting platforms.</div>
+      <div class="skill-tags"><span class="tag gold">Power BI</span><span class="tag">Tableau</span><span class="tag">DAX</span><span class="tag">Looker</span><span class="tag">Excel VBA</span><span class="tag">Power Query</span></div>
+    </div>
     <div class="skill-card reveal">
       <div class="skill-icon">🗄️</div>
       <div class="skill-cat">SQL & Data Engineering</div>
-      <div class="skill-desc">Advanced querying, ETL design, and database optimization across enterprise platforms.</div>
-      <div class="skill-tags">
-        <span class="tag gold">PostgreSQL</span><span class="tag">Snowflake</span><span class="tag">MySQL</span>
-        <span class="tag">MSSQL</span><span class="tag">RedShift</span><span class="tag">ETL Pipelines</span><span class="tag">Query Optimization</span>
-      </div>
+      <div class="skill-desc">Advanced querying, ETL pipelines, and database optimization across enterprise platforms.</div>
+      <div class="skill-tags"><span class="tag gold">PostgreSQL</span><span class="tag">Snowflake</span><span class="tag">MySQL</span><span class="tag">MSSQL</span><span class="tag">RedShift</span><span class="tag">ETL Pipelines</span><span class="tag">Query Optimization</span></div>
     </div>
     <div class="skill-card reveal">
       <div class="skill-icon">🐍</div>
       <div class="skill-cat">Python & Machine Learning</div>
-      <div class="skill-desc">Predictive modeling, data wrangling, and classification pipelines for business use cases.</div>
-      <div class="skill-tags">
-        <span class="tag gold">pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span>
-        <span class="tag">Classification</span><span class="tag">Regression</span><span class="tag">Clustering</span><span class="tag">R</span>
-      </div>
+      <div class="skill-desc">Predictive modeling, segmentation, and ML pipelines for business decision support.</div>
+      <div class="skill-tags"><span class="tag gold">pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">Classification</span><span class="tag">Regression</span><span class="tag">Clustering</span><span class="tag">R</span></div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">📊</div>
-      <div class="skill-cat">Business Intelligence & Visualization</div>
-      <div class="skill-desc">End-to-end dashboard development from raw data pipelines to executive reporting.</div>
-      <div class="skill-tags">
-        <span class="tag gold">Power BI</span><span class="tag">Tableau</span><span class="tag">DAX</span>
-        <span class="tag">Looker</span><span class="tag">Excel VBA</span><span class="tag">Power Query</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-icon">💹</div>
-      <div class="skill-cat">Financial Modeling & Analytics</div>
-      <div class="skill-desc">Valuation, forecasting, and scenario analysis supporting corporate finance decisions.</div>
-      <div class="skill-tags">
-        <span class="tag gold">DCF Valuation</span><span class="tag">3-Statement Models</span>
-        <span class="tag">Scenario Analysis</span><span class="tag">Sensitivity Analysis</span>
-        <span class="tag">Budget Modeling</span><span class="tag">KPI Design</span>
-      </div>
+      <div class="skill-icon">🔍</div>
+      <div class="skill-cat">Business Analysis & Consulting</div>
+      <div class="skill-desc">Translating business needs into analytical solutions and clear stakeholder deliverables.</div>
+      <div class="skill-tags"><span class="tag gold">Requirements Gathering</span><span class="tag">Process Mapping</span><span class="tag">Gap Analysis</span><span class="tag">Stakeholder Mgmt</span><span class="tag">Agile / Scrum</span><span class="tag">Change Mgmt</span></div>
     </div>
     <div class="skill-card reveal">
       <div class="skill-icon">📈</div>
       <div class="skill-cat">Analytics & Statistics</div>
-      <div class="skill-desc">Applied statistical and segmentation methods for customer and business insight.</div>
-      <div class="skill-tags">
-        <span class="tag gold">RFM Analysis</span><span class="tag">Cohort Analysis</span>
-        <span class="tag">A/B Testing</span><span class="tag">Hypothesis Testing</span>
-        <span class="tag">Regression</span><span class="tag">Forecasting</span>
-      </div>
+      <div class="skill-desc">Applied segmentation, testing, and forecasting for business performance measurement.</div>
+      <div class="skill-tags"><span class="tag gold">RFM Analysis</span><span class="tag">Cohort Analysis</span><span class="tag">A/B Testing</span><span class="tag">KPI Design</span><span class="tag">Hypothesis Testing</span><span class="tag">Forecasting</span></div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">☁️</div>
-      <div class="skill-cat">Cloud & Business Skills</div>
-      <div class="skill-desc">Cloud platforms, Agile delivery, and stakeholder management capabilities.</div>
-      <div class="skill-tags">
-        <span class="tag gold">AWS</span><span class="tag">Azure (AZ-900)</span>
-        <span class="tag">Agile / Scrum</span><span class="tag">Stakeholder Mgmt</span>
-        <span class="tag">Requirements Gathering</span><span class="tag">Change Mgmt</span>
-      </div>
+      <div class="skill-icon">💹</div>
+      <div class="skill-cat">Financial & Scenario Modeling</div>
+      <div class="skill-desc">Valuation, forecasting, and scenario analysis supporting strategic finance decisions.</div>
+      <div class="skill-tags"><span class="tag gold">DCF Valuation</span><span class="tag">3-Statement Models</span><span class="tag">Scenario Analysis</span><span class="tag">Sensitivity Analysis</span><span class="tag">Budget Modeling</span></div>
     </div>
   </div>
 </section>
@@ -432,7 +494,7 @@
 <section id="experience">
   <span class="section-tag">Work History</span>
   <h2 class="section-title">Professional Experience</h2>
-  <p class="section-sub">Hands-on analyst experience delivering measurable results across data automation, BI, customer analytics, and financial modeling.</p>
+  <p class="section-sub">Hands-on experience delivering measurable results across data automation, BI consulting, customer analytics, and operational improvement.</p>
   <div class="exp-list">
     <div class="exp-card reveal">
       <div class="exp-header">
@@ -446,12 +508,12 @@
         </div>
       </div>
       <ul class="exp-bullets">
-        <li>Automated end-to-end reporting in <strong>SQL, Python, and Power BI</strong>, consolidating data from <strong>10+ sources</strong> and eliminating <strong>7 hours of manual effort per week</strong>, improving timeliness of leadership reviews.</li>
-        <li>Designed and maintained <strong>5+ KPI-driven executive dashboards</strong> tracking revenue performance, operational costs, and customer LTV — used in weekly senior stakeholder reviews, reducing follow-up clarification by <strong>~40%</strong>.</li>
-        <li>Built <strong>scenario-based financial models</strong> in SQL and Excel (downside / baseline / upside) to support <strong>~$300K in budget planning decisions</strong> and evaluate strategic trade-offs across growth and cost optimization.</li>
+        <li>Automated end-to-end reporting in <strong>SQL, Python, and Power BI</strong>, consolidating data from <strong>10+ sources</strong> and eliminating <strong>7 hours of manual effort per week</strong>, improving leadership review timeliness.</li>
+        <li>Designed and maintained <strong>5+ KPI-driven executive dashboards</strong> tracking revenue, operational costs, and customer LTV — used in weekly senior stakeholder reviews, reducing follow-up clarification by <strong>~40%</strong>.</li>
+        <li>Built <strong>scenario-based financial models</strong> (downside / baseline / upside) in SQL and Excel to support <strong>~$300K in budget planning decisions</strong> and evaluate strategic trade-offs across growth and cost levers.</li>
         <li>Directed <strong>RFM customer cohort analysis</strong> across 50,000+ customers to identify high-value segments and churn drivers, contributing to a <strong>~10% retention lift</strong> within the tracked cohort.</li>
-        <li>Implemented <strong>data validation and reconciliation controls</strong> across 60,000+ record datasets, reducing downstream reporting errors by an estimated <strong>20–25%</strong> and improving reliability of financial metrics.</li>
-        <li>Recommended <strong>3 operational process improvements</strong> through structured bottleneck analysis, presented findings with implementation roadmap to operations leadership.</li>
+        <li>Implemented <strong>data validation and reconciliation controls</strong> across 60,000+ record datasets, reducing downstream reporting errors by <strong>~20–25%</strong> and improving metric reliability for senior stakeholders.</li>
+        <li>Recommended <strong>3 operational process improvements</strong> through structured bottleneck analysis — presented findings and implementation roadmap to operations leadership.</li>
       </ul>
     </div>
     <div class="exp-card reveal">
@@ -467,9 +529,9 @@
       </div>
       <ul class="exp-bullets">
         <li>Identified <strong>3 critical manufacturing bottlenecks</strong> through structured process analysis and root cause investigation, directly contributing to a <strong>~10% production cost reduction</strong> over six months.</li>
-        <li>Spearheaded <strong>end-to-end CRM implementation</strong> across sales and operations — personally trained <strong>30+ users</strong>, standardized cross-functional workflows, and improved customer response times.</li>
-        <li>Analyzed <strong>1,200+ customer feedback records</strong> across 6 channels to identify recurring service gaps and pain points, prioritizing improvement initiatives that enhanced satisfaction scores.</li>
-        <li>Created standardized reporting templates and data collection protocols, reducing manual correction effort by <strong>~15%</strong> and improving consistency across departments.</li>
+        <li>Led <strong>end-to-end CRM implementation</strong> across sales and operations — trained <strong>30+ users</strong>, standardized cross-functional workflows, and improved customer response times organization-wide.</li>
+        <li>Analyzed <strong>1,200+ customer feedback records</strong> across 6 channels to surface recurring service gaps, prioritizing improvements that enhanced satisfaction scores across key segments.</li>
+        <li>Created standardized reporting templates and data collection protocols, reducing manual correction effort by <strong>~15%</strong> and improving consistency across department reporting cycles.</li>
       </ul>
     </div>
   </div>
@@ -479,44 +541,97 @@
 <section id="projects">
   <span class="section-tag">Portfolio</span>
   <h2 class="section-title">Featured Projects</h2>
-  <p class="section-sub">Academic and applied projects demonstrating end-to-end analytical capability — from raw data pipelines to executive decision support.</p>
+  <p class="section-sub">A mix of academic work and independently developed analytical projects — covering BI, machine learning, consulting analysis, and data engineering.</p>
   <div class="projects-grid">
+
     <div class="project-card reveal">
-      <div class="proj-top"><div class="proj-icon">🔄</div><div class="proj-year">Academic Project</div></div>
+      <div class="proj-top navy"><div class="proj-icon">🔄</div><div class="proj-badges"><span class="proj-year">Data Engineering</span><span class="proj-source academic">Academic</span></div></div>
       <div class="proj-body">
-        <div class="proj-type">Data Engineering · Reporting Automation</div>
+        <div class="proj-type">ETL · Reporting Automation · SQL</div>
         <div class="proj-title">Enterprise Data Pipeline & Reporting Optimization</div>
-        <div class="proj-desc">Built a SQL-based ETL pipeline integrating 70,000+ transaction records from 3 legacy platforms into a unified schema (8 tables, 20+ relationships). Cut report turnaround from 4 hours to 30 minutes. Implemented Agile sprints, data lineage documentation, and governance recommendations for 5+ stakeholders.</div>
+        <div class="proj-impact">⚡ 4 hours → 30 minutes report turnaround</div>
+        <div class="proj-desc">Built a SQL-based ETL pipeline integrating 70,000+ transaction records from 3 legacy platforms into a unified schema (8 tables, 20+ relationships). Standardized KPI definitions and validation logic, enabling 5+ analysts to shift from manual reconciliation to insight generation. Delivered with Agile sprints and data governance documentation.</div>
         <div class="proj-stack"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">Power BI</span><span class="tag">Agile</span></div>
       </div>
     </div>
+
     <div class="project-card reveal">
-      <div class="proj-top"><div class="proj-icon">🤖</div><div class="proj-year">Academic Project</div></div>
+      <div class="proj-top teal"><div class="proj-icon">🤖</div><div class="proj-badges"><span class="proj-year">Machine Learning</span><span class="proj-source academic">Academic</span></div></div>
       <div class="proj-body">
-        <div class="proj-type">Machine Learning · Risk Analytics</div>
-        <div class="proj-title">Predictive Analytics — Applicant Completion Risk Model</div>
-        <div class="proj-desc">Built Logistic Regression and Random Forest classification models in Python to predict applicant completion risk with ~84% accuracy and balanced precision-recall. Identified key drop-off drivers. Translated outputs into dashboard-ready executive risk scorecards used across 10+ operational teams.</div>
-        <div class="proj-stack"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">SQL</span><span class="tag">Tableau</span></div>
+        <div class="proj-type">ML Classification · Risk Analytics · Python</div>
+        <div class="proj-title">Predictive Risk Model — Applicant Completion</div>
+        <div class="proj-impact">🎯 84% model accuracy · Balanced precision-recall</div>
+        <div class="proj-desc">Built Logistic Regression and Random Forest classifiers using Python to predict applicant completion risk across 15,000+ records with 20 engineered features. Identified key drop-off drivers (submission timing, prior engagement, application length). Translated model outputs into dashboard-ready executive risk scorecards for 10+ operational teams.</div>
+        <div class="proj-stack"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Feature Engineering</span></div>
       </div>
     </div>
+
     <div class="project-card reveal">
-      <div class="proj-top"><div class="proj-icon">👥</div><div class="proj-year">Academic Project</div></div>
+      <div class="proj-top navy"><div class="proj-icon">👥</div><div class="proj-badges"><span class="proj-year">Customer Analytics</span><span class="proj-source academic">Academic</span></div></div>
       <div class="proj-body">
-        <div class="proj-type">Customer Analytics · BI Dashboard</div>
+        <div class="proj-type">RFM Segmentation · BI Dashboard · Tableau</div>
         <div class="proj-title">Customer Segmentation & Sales Analytics Dashboard</div>
-        <div class="proj-desc">Applied RFM analysis to segment 10,000+ retail customers into high-value, at-risk, and dormant groups for targeted marketing. Built an interactive Tableau dashboard integrating SQL data to track customer behavior, revenue trends, and campaign performance for 5 cross-functional stakeholders.</div>
-        <div class="proj-stack"><span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">RFM Analysis</span><span class="tag">Python</span></div>
+        <div class="proj-impact">📊 5 stakeholders · Revenue & churn visibility</div>
+        <div class="proj-desc">Applied RFM analysis to segment 10,000+ retail customers into high-value, at-risk, and dormant groups for targeted marketing strategy. Built an interactive Tableau dashboard integrating SQL data to track customer behavior, revenue trends, and campaign performance. Delivered segment-based retention and cross-sell recommendations to 5 cross-functional stakeholders.</div>
+        <div class="proj-stack"><span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">RFM Analysis</span><span class="tag">Python</span><span class="tag">K-Means</span></div>
       </div>
     </div>
+
     <div class="project-card reveal">
-      <div class="proj-top"><div class="proj-icon">💼</div><div class="proj-year">Academic Project</div></div>
+      <div class="proj-top dark"><div class="proj-icon">💼</div><div class="proj-badges"><span class="proj-year">Corporate Finance</span><span class="proj-source academic">Academic</span></div></div>
       <div class="proj-body">
-        <div class="proj-type">Corporate Finance · Valuation Modeling</div>
-        <div class="proj-title">Financial Valuation, DCF & 3-Statement Model</div>
-        <div class="proj-desc">Constructed an integrated 3-statement financial model and DCF valuation using 5 years of historical data with 20+ key metrics. Conducted sensitivity analysis across 10 valuation assumptions including revenue growth and discount rates. Delivered an institutional buy-side investment recommendation for a $100M+ valuation range.</div>
+        <div class="proj-type">DCF · 3-Statement · Scenario Modeling</div>
+        <div class="proj-title">Financial Valuation & Integrated 3-Statement Model</div>
+        <div class="proj-impact">💰 $100M+ valuation range · 10 sensitivity assumptions</div>
+        <div class="proj-desc">Constructed an integrated 3-statement financial model and DCF valuation using 5 years of historical data with 20+ key metrics. Conducted sensitivity analysis across 10 valuation assumptions including revenue growth and discount rates. Delivered an institutional buy-side investment recommendation simulating a real investment committee presentation.</div>
         <div class="proj-stack"><span class="tag">Excel</span><span class="tag">DCF</span><span class="tag">3-Statement</span><span class="tag">Scenario Analysis</span></div>
       </div>
     </div>
+
+    <div class="project-card reveal">
+      <div class="proj-top slate"><div class="proj-icon">🏪</div><div class="proj-badges"><span class="proj-year">Consulting Analysis</span><span class="proj-source personal">Personal</span></div></div>
+      <div class="proj-body">
+        <div class="proj-type">Consulting · Market Analysis · Structured Problem Solving</div>
+        <div class="proj-title">Retail Expansion Strategy — Market Entry Analysis</div>
+        <div class="proj-impact">🗺️ 3 market scenarios · Go/no-go recommendation</div>
+        <div class="proj-desc">Independently conducted a consulting-style market entry analysis for a hypothetical mid-size retail brand evaluating 3 U.S. cities. Built a structured decision framework using demographic data, competitor density, foot traffic proxies, and unit economics modeling. Delivered a McKinsey-style slide deck with a data-backed go/no-go recommendation and phased implementation roadmap.</div>
+        <div class="proj-stack"><span class="tag">Excel</span><span class="tag">Python</span><span class="tag">Market Analysis</span><span class="tag">Deck Design</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-top teal"><div class="proj-icon">📉</div><div class="proj-badges"><span class="proj-year">Business Intelligence</span><span class="proj-source personal">Personal</span></div></div>
+      <div class="proj-body">
+        <div class="proj-type">Power BI · KPI Design · Operations Analytics</div>
+        <div class="proj-title">Operations KPI Command Center — Power BI</div>
+        <div class="proj-impact">📋 Real-time ops visibility · 6 KPI categories tracked</div>
+        <div class="proj-desc">Independently designed a multi-page Power BI dashboard simulating an operations command center for a mid-size logistics company. Integrated synthetic datasets across procurement, fulfilment, headcount, and cost centers. Built DAX measures for rolling averages, variance analysis, and exception flagging — structured to mirror a real weekly leadership review cadence.</div>
+        <div class="proj-stack"><span class="tag gold">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Data Modeling</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-top dark"><div class="proj-icon">🔁</div><div class="proj-badges"><span class="proj-year">Process Consulting</span><span class="proj-source personal">Personal</span></div></div>
+      <div class="proj-body">
+        <div class="proj-type">Process Improvement · Root Cause Analysis · Consulting</div>
+        <div class="proj-title">Operational Efficiency Audit — Process Redesign</div>
+        <div class="proj-impact">🔧 3 bottlenecks identified · ~15% cost reduction modeled</div>
+        <div class="proj-desc">Conducted a structured operational efficiency audit for a simulated service business using value stream mapping and root cause analysis. Identified 3 critical process bottlenecks through swim-lane process diagrams and interview simulation. Delivered an improvement roadmap with effort/impact prioritization matrix, change management plan, and projected savings analysis.</div>
+        <div class="proj-stack"><span class="tag">Process Mapping</span><span class="tag">Visio</span><span class="tag">Excel</span><span class="tag">Root Cause Analysis</span></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="proj-top slate"><div class="proj-icon">📊</div><div class="proj-badges"><span class="proj-year">People Analytics</span><span class="proj-source personal">Personal</span></div></div>
+      <div class="proj-body">
+        <div class="proj-type">HR Analytics · Attrition Modeling · Python</div>
+        <div class="proj-title">Employee Attrition Prediction & Workforce Dashboard</div>
+        <div class="proj-impact">🧑‍💼 ~82% attrition accuracy · Cost-to-hire impact modeled</div>
+        <div class="proj-desc">Built a full people analytics pipeline using a publicly available IBM HR dataset (1,400+ employees, 35 features). Trained a Random Forest attrition classifier (82% accuracy) and identified top churn drivers: overtime, job satisfaction, and tenure. Paired with a Tableau dashboard surfacing department-level risk scores, salary band gaps, and estimated replacement cost impact for HR leadership.</div>
+        <div class="proj-stack"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Tableau</span><span class="tag">HR Analytics</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -532,7 +647,7 @@
         <div class="comp-title">IIT Entrepreneurship Club — Startup Pitch Competition</div>
         <div class="comp-date">April 2024 · Illinois Institute of Technology</div>
         <div><span class="comp-result">Top 10 Finalist</span></div>
-        <div class="comp-desc">Co-developed a peer-to-peer marketplace e-commerce concept, led financial modeling and valuation analysis, and presented a detailed business case to a panel of venture capitalists and industry entrepreneurs.</div>
+        <div class="comp-desc">Co-developed a peer-to-peer marketplace concept, led financial modeling and valuation analysis, and presented a detailed data-backed business case to a panel of venture capitalists and industry entrepreneurs.</div>
       </div>
     </div>
     <div class="comp-card reveal">
@@ -572,42 +687,62 @@
 <section id="blog">
   <span class="section-tag">Insights</span>
   <h2 class="section-title">Thought Leadership</h2>
-  <p class="section-sub">Articles on data analytics, financial modeling, and business intelligence in banking and enterprise — coming soon.</p>
+  <p class="section-sub">Articles on business intelligence, data consulting, analytics strategy, and the tools that make analysts indispensable.</p>
   <div class="blog-grid">
     <div class="blog-card reveal">
+      <div class="blog-cat bi">Business Intelligence</div>
       <div class="blog-date">Coming Soon</div>
-      <div class="blog-title">Why Most BI Dashboards Fail Finance Teams (And How to Fix It)</div>
-      <div class="blog-excerpt">The problem isn't the tool — it's the data model and KPI design. Here's how to build dashboards finance leaders actually trust and use every day.</div>
+      <div class="blog-title">Why Most BI Dashboards Fail Stakeholders (And How to Fix It)</div>
+      <div class="blog-excerpt">It's not the tool — it's missing KPI alignment and poor data modeling. Here's the framework I use to build dashboards leadership actually trusts.</div>
       <span class="blog-read">Coming Soon</span>
     </div>
     <div class="blog-card reveal">
+      <div class="blog-cat data">Data Analytics</div>
       <div class="blog-date">Coming Soon</div>
       <div class="blog-title">RFM Analysis: The Customer Segmentation Method Every Analyst Should Know</div>
-      <div class="blog-excerpt">A practical walkthrough of how RFM analysis transforms raw transaction data into high-value customer targeting strategy.</div>
+      <div class="blog-excerpt">A practical walkthrough of how Recency, Frequency, and Monetary analysis transforms raw transaction data into actionable targeting strategy.</div>
       <span class="blog-read">Coming Soon</span>
     </div>
     <div class="blog-card reveal">
+      <div class="blog-cat consulting">Consulting</div>
+      <div class="blog-date">Coming Soon</div>
+      <div class="blog-title">How to Think Like a Consultant: The Problem-Solving Framework Analysts Need</div>
+      <div class="blog-excerpt">MECE thinking, issue trees, and hypothesis-driven analysis — the structured problem-solving toolkit that separates good analysts from great consultants.</div>
+      <span class="blog-read">Coming Soon</span>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-cat data">Data Analytics</div>
       <div class="blog-date">Coming Soon</div>
       <div class="blog-title">Python for Business Analysts: The 80/20 Toolkit That Actually Matters</div>
-      <div class="blog-excerpt">You don't need to be a data scientist. Here are the pandas and SQL skills that deliver 80% of the value in a business analyst role.</div>
+      <div class="blog-excerpt">You don't need a CS degree. Here are the pandas, SQL, and visualization skills that deliver 80% of real business analyst value in under 90 days.</div>
       <span class="blog-read">Coming Soon</span>
     </div>
     <div class="blog-card reveal">
-      <div class="blog-date">Coming Soon</div>
-      <div class="blog-title">Building a 3-Statement Financial Model From Scratch</div>
-      <div class="blog-excerpt">A step-by-step guide to linking income statement, balance sheet, and cash flow — the core skill every financial analyst needs to master.</div>
-      <span class="blog-read">Coming Soon</span>
-    </div>
-    <div class="blog-card reveal">
+      <div class="blog-cat bi">Business Intelligence</div>
       <div class="blog-date">Coming Soon</div>
       <div class="blog-title">ETL Pipelines for Analysts: What You Need to Know Without Being a Data Engineer</div>
-      <div class="blog-excerpt">How to design and document clean ETL workflows using SQL and Python so your downstream reporting is reliable, auditable, and fast.</div>
+      <div class="blog-excerpt">How to design, document, and hand off clean ETL workflows in SQL and Python so your downstream reporting is always reliable and audit-ready.</div>
       <span class="blog-read">Coming Soon</span>
     </div>
     <div class="blog-card reveal">
+      <div class="blog-cat consulting">Consulting</div>
       <div class="blog-date">Coming Soon</div>
-      <div class="blog-title">Scenario vs. Sensitivity Analysis: When to Use Each in Financial Modeling</div>
-      <div class="blog-excerpt">Two of the most powerful tools in financial modeling — and most analysts use them interchangeably. Here's the key difference that changes your analysis.</div>
+      <div class="blog-title">Stakeholder Management for Data Analysts: The Skill No One Teaches</div>
+      <div class="blog-excerpt">Your analysis is only as good as your ability to communicate it. Here's how to manage expectations, present uncertainty, and drive buy-in from senior stakeholders.</div>
+      <span class="blog-read">Coming Soon</span>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-cat finance">Financial Analysis</div>
+      <div class="blog-date">Coming Soon</div>
+      <div class="blog-title">DCF vs. Comps: Which Valuation Method Should You Lead With?</div>
+      <div class="blog-excerpt">Both methods have blind spots. Here's how experienced analysts think about when to anchor on intrinsic value vs. market-implied multiples — and how to triangulate between them.</div>
+      <span class="blog-read">Coming Soon</span>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-cat finance">Banking & Finance</div>
+      <div class="blog-date">Coming Soon</div>
+      <div class="blog-title">Breaking Into Banking with a Data Background: What Actually Works</div>
+      <div class="blog-excerpt">SQL, Python, and Power BI are increasingly valued in banking roles. Here's how to position a data analytics background for investment banking, risk, and corporate finance teams.</div>
       <span class="blog-read">Coming Soon</span>
     </div>
   </div>
@@ -618,12 +753,12 @@
   <div class="contact-layout">
     <div class="reveal">
       <span class="section-tag">Get In Touch</span>
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="section-sub">Open to full-time roles in business analysis, data analytics, BI, and financial consulting. Based in Chicago — open to hybrid and remote opportunities.</p>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-sub">Open to full-time roles and consulting engagements across business analysis, BI development, data analytics, financial analysis, and strategy consulting. Based in Chicago — happy to work on-site, hybrid, or fully remote.</p>
       <div class="contact-info">
         <div class="c-item">
           <div class="c-icon">✉️</div>
-          <div><div class="c-label">Email</div><div class="c-val"><a href="mailto:urziarahman@gmail.com">urziarahman@gmail.com</a></div></div>
+          <div><div class="c-label">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection#6a1f1810030b180b02070b042a0d070b030644090507"><span class="__cf_email__" data-cfemail="ff8a8d85969e8d9e97929e91bf98929e9693d19c9092">[email&#160;protected]</span></a></div></div>
         </div>
         <div class="c-item">
           <div class="c-icon">📞</div>
@@ -631,7 +766,7 @@
         </div>
         <div class="c-item">
           <div class="c-icon">📍</div>
-          <div><div class="c-label">Location</div><div class="c-val">Chicago, IL · Open to Remote & Hybrid</div></div>
+          <div><div class="c-label">Location</div><div class="c-val">Chicago, IL</div></div>
         </div>
         <div class="c-item">
           <div class="c-icon">🔗</div>
@@ -639,42 +774,87 @@
         </div>
         <div class="c-item">
           <div class="c-icon">📄</div>
-          <div><div class="c-label">Resume</div><div class="c-val"><a href="Zia_Rahman_BA_Final.pdf" download>Download CV (PDF) ↓</a></div></div>
+          <div><div class="c-label">Resume</div><div class="c-val"><a href="Zia Rahman BA Final.pdf" download>Download CV (PDF) ↓</a></div></div>
         </div>
       </div>
+      <div class="avail-badges">
+        <span class="avail-badge active">✅ On-Site</span>
+        <span class="avail-badge active">✅ Hybrid</span>
+        <span class="avail-badge active">✅ Remote</span>
+        <span class="avail-badge active">✅ Full-Time</span>
+        <span class="avail-badge active">✅ Contract / Consulting</span>
+      </div>
     </div>
-    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal" action="https://formspree.io/f/mwvnrwol" method="POST" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group"><label for="fname">First Name</label><input id="fname" type="text" placeholder="Jane" required/></div>
         <div class="form-group"><label for="lname">Last Name</label><input id="lname" type="text" placeholder="Smith" required/></div>
       </div>
       <div class="form-group"><label for="email">Email Address</label><input id="email" type="email" placeholder="jane@company.com" required/></div>
-      <div class="form-group"><label for="subject">Subject</label><input id="subject" type="text" placeholder="Job Opportunity / Consulting Inquiry / Collaboration"/></div>
-      <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell me about the opportunity or how I can help..." required></textarea></div>
+      <div class="form-group"><label for="subject">Subject</label><input id="subject" type="text" placeholder="Job Opportunity · Consulting Project · Collaboration"/></div>
+      <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell me about the role or project you have in mind..." required></textarea></div>
       <button type="submit" class="submit-btn" id="submitBtn">Send Message →</button>
     </form>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 <span>Zia Rahman</span> · Business & Data Analyst · Chicago, IL · Built with purpose.</p>
+  <p>© 2025 <span>Zia Rahman</span> · Business Analyst · BI Consultant · Financial Analyst · Data Strategist · Chicago, IL</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
-      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 70); observer.unobserve(e.target); }
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 65); observer.unobserve(e.target); }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.07 });
   reveals.forEach(el => observer.observe(el));
-  function handleSubmit(e) {
+
+  async function handleSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Message Sent ✓'; btn.style.background = '#2ecc71'; btn.style.color = '#fff';
-    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000);
+    const form = e.target;
+    btn.textContent = 'Sending...';
+    btn.style.opacity = '0.75';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/mwvnrwol', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        btn.textContent = 'Message Sent!';
+        btn.style.background = '#2ecc71';
+        btn.style.color = '#fff';
+        btn.style.opacity = '1';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = 'Send Message';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      btn.textContent = 'Failed - Try Again';
+      btn.style.background = '#e74c3c';
+      btn.style.color = '#fff';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 4000);
+    }
   }
 </script>
 </body>
